@@ -31,30 +31,24 @@ export default function WelcomeSection() {
     }
 
     const draw = () => {
-      // Background-ul cu opacitate mică creează efectul de "coadă" (trail)
       ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // --- MODIFICARE GRADIENT ---
-      // Creăm un gradient care pleacă de sus (0) până jos (canvas.height)
-      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      gradient.addColorStop(0, "#A020F0");   // Începe cu mov sus de tot
-      gradient.addColorStop(0.4, "#C71A5C"); // Ajunge la ROZ deja la 40% din ecran
-      gradient.addColorStop(1, "#C71A5C");   // Rămâne ROZ până jos de tot
 
+      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      gradient.addColorStop(0, "#A020F0");
+      gradient.addColorStop(0.4, "#C71A5C");
+      gradient.addColorStop(1, "#C71A5C");
       dropsRef.current.forEach((drop, i) => {
         const text = letters[Math.floor(Math.random() * letters.length)];
 
-        // Aplicăm gradientul ploii
         ctx.fillStyle = gradient;
 
-        // Adăugăm un mic "Glow" neon literelor
         ctx.shadowBlur = 5;
         ctx.shadowColor = "#A020F0";
 
         ctx.fillText(text, i * fontSize, drop * fontSize);
 
-        // Resetăm shadow-ul ca să nu încetinească browserul
         ctx.shadowBlur = 0;
 
         dropsRef.current[i] += 0.40;

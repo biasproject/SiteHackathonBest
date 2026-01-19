@@ -1,16 +1,218 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body,
 html {
   background-color: #000;
 }
 
-html {
-  scroll-behavior: smooth;
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.App {
+  text-align: center;
+}
+
+.content-wrapper {
+  width: 80%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#About h1,
+#About h2,
+#Prizes h1,
+#Organizers h1,
+#Sponsors h1,
+.footer-copyright a,
+.prize-box:hover,
+.prize-amount {
+  background: linear-gradient(to right, #A020F0, #C71A5C);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  filter: drop-shadow(0 0 5px rgba(160, 32, 240, 0.2));
+}
+
+/* --- Butoane --- */
+.home-button {
+  background: linear-gradient(to right, #A020F0, #C71A5C);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 20px 40px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 4px 15px rgba(160, 32, 240, 0.4);
+  transition: all 0.3s ease;
+}
+
+.home-button:hover {
+  background: linear-gradient(to right, #D8B4FE, #F9A8D4) !important;
+  color: #2C0A3D !important;
+  box-shadow: 0 0 25px rgba(216, 180, 254, 0.6);
+  transform: scale(1.05);
+}
+
+.buton-best {
+  display: inline-block;
+  width: fit-content;
+  margin-top: 25px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  background-color: #fdf2f8;
+  color: #C71A5C !important;
+  padding: 12px 30px;
+  border: 1px solid rgba(199, 26, 92, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.buton-best:hover {
+  transform: translateY(-2px);
+  background-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(199, 26, 92, 0.2);
+  border-color: rgba(199, 26, 92, 0.5);
+}
+
+/* --- Layout Coloane & Grid --- */
+.sectiune-doua-coloane {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.coloana-imagine {
+  flex: 1;
+}
+
+.coloana-imagine img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.coloana-text {
+  flex: 1;
+  text-align: right;
+}
+
+.coloana-text-stanga {
+  flex: 1;
+  text-align: left;
+}
+
+.prizes-grid {
+  display: flex;
+  gap: 30px;
+}
+
+.organizer-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px !important;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.info-box {
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid #9f1676;
+  border-radius: 15px;
+  padding: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+.info-item svg {
+  fill: #9f1676 !important;
+  filter: drop-shadow(0 0 5px rgba(199, 26, 92, 0.4));
+}
+
+.prize-box {
+  flex: 1;
+  background-color: #2a2a2a;
+  padding: 30px;
+  border-radius: 10px;
+  border-top: 3px solid transparent;
+  transition: transform 0.3s ease, border-top-color 0.3s ease;
+}
+
+.prize-box:hover {
+  transform: translateY(-10px);
+}
+
+.organizer-card {
+  width: 285px;
+  text-align: center;
+}
+
+.organizer-card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.organizer-card h3 {
+  font-family: 'Courier New', Courier, monospace;
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.organizer-card p {
+  font-family: 'Courier New', Courier, monospace;
+  color: #bbbbbb;
+  font-size: 0.82rem !important;
+  white-space: nowerap;
+  overflow: visible;
+  letter-spacing: -0.2px;
+  line-height: 1.4;
+  margin: 5px 0 0 0;
+}
+
+
+.error-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: px;
+  margin-bottom: 20px;
+  margin-left: 15px;
 }
 
 .error-code {
   font-size: 4.3rem;
   font-weight: 700;
-  margin: 0;
+  margin: 0 !important;
   line-height: 1;
 }
 
@@ -31,72 +233,71 @@ html {
   padding-left: 30px;
 }
 
-.home-button {
-  background: linear-gradient(to right, #A020F0, #C71A5C);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  padding: 20px 40px;
-  font-size: 1.3rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  font-family: inherit;
-  box-shadow: 0 4px 15px rgba(160, 32, 240, 0.4);
-  /* O umbră mov subtilă */
-  transition: all 0.3s ease;
-  /* Face trecerea spre pastel să fie fină */
-}
-
-.home-button:hover {
-  background: linear-gradient(to right, #D8B4FE, #F9A8D4) !important;
-  color: #2C0A3D !important;
-  /* Text închis pe fundal deschis/pastel */
-  box-shadow: 0 0 25px rgba(216, 180, 254, 0.6);
-  transform: scale(1.05);
-  background-color: #2C0A3D;
-  transform: scale(1.05);
-}
-
-.error-wrapper {
-  display: flex;
-  flex-direction: row;
-  /* Forțează așezarea pe orizontală */
-  align-items: center;
-  /* Îi aliniază la același nivel pe verticală */
-  justify-content: center;
-  gap: px;
-  margin-bottom: 20px;
-  margin-left: 15px;
-}
-
-.error-code {
-  margin: 0 !important;
-  /* Textul acum va fi fix pe centrul ecranului */
-}
-
 .dino-icon {
   height: 140px;
-  /* Mărește-l puțin să fie proporțional cu textul de 4.3rem */
   width: 80px;
   image-rendering: pixelated;
-  /* Păstrează aspectul de pixel-art clar */
   object-fit: cover;
   object-position: left;
-  /* Dacă imaginea ta originală este neagră, filtrul de mai jos o face albă */
-  /* Dacă e deja colorată/albă, poți șterge linia filter */
   filter: brightness(0) invert(1);
   margin-left: 10px;
   margin-bottom: -15px;
 }
 
-body::-webkit-scrollbar {
-  display: none;
+.scroller {
+  max-width: 100%;
+  margin: 1rem auto;
 }
 
-.App {
-  text-align: center;
+.scroller__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-block: 1rem;
 }
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 120s) var(--_animation-direction, forwards) linear infinite;
+}
+
+.sponsor {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsor img {
+  height: 120px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.25s, transform 0.25s;
+}
+
+.sponsor img:hover {
+  filter: none;
+  transform: scale(1.05);
+}
+
+.scroll-down-arrow {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  z-index: 2;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+}
+
 
 #Welcome canvas {
   width: 100%;
@@ -105,7 +306,6 @@ body::-webkit-scrollbar {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
   position: relative;
   z-index: 2;
   text-align: center;
@@ -137,479 +337,104 @@ body::-webkit-scrollbar {
   animation: fadeInContent 1.2s ease-in-out 0.7s forwards;
 }
 
-@keyframes fadeInContent {
-
-  /* De unde pornește animația */
-  from {
-    opacity: 0;
-    /* Opțional: pentru un efect mai frumos, pornește puțin mai de jos */
-    transform: translateY(20px);
-  }
-
-  /* Unde ajunge animația */
-  to {
-    opacity: 1;
-    /* Opțional: ajunge la poziția sa finală (0) */
-    transform: translateY(0);
-  }
-}
-
 #About {
   background-color: #1a1a1a;
   color: #f0f0f0;
-  /* Eliminăm padding-ul de aici, îl vom pune unde trebuie */
   padding: 0;
 }
 
 .about-hero-section {
-
-
   background-size: cover;
   background-position: center;
-
-  /* Adăugăm spațiu interior pentru a nu se lipi conținutul de margini */
   padding: 80px 0;
   color: white;
   background-blend-mode: overlay;
-  /* Asigură-te că textul este alb aici */
-}
-
-.content-wrapper {
-  width: 80%;
-  /* Setează lățimea la 80% din părinte */
-  max-width: 1200px;
-  /* O lățime maximă pentru ecrane foarte mari */
-  margin-left: auto;
-  /* Centrează containerul pe orizontală */
-  margin-right: auto;
-  /* Centrează containerul pe orizontală */
+  padding-bottom: 80px;
 }
 
 #About p {
   font-size: 1.1rem;
-  /* Mărim fontul (standard e 1rem) */
   line-height: 1.7;
-  /* Adăugăm spațiu de aerisire între rânduri */
   color: #cccccc;
   text-align: center;
   width: 100%;
   margin-left: 0;
 }
 
-/* Containerul general pentru textele din cele două coloane */
 .about-text-container {
   flex: 1.2;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  /* MODIFICAREA CHEIE: */
   align-items: center;
-  /* <--- Asta va centra totul pe orizontală */
-
   padding-left: 20px;
 }
 
-/* Suprascriem alinierea pentru textul din dreapta */
 .text-align-right {
   text-align: left !important;
 }
 
-/* Modificăm puțin coloana de imagine să fie mai mică */
-.coloana-imagine {
-  flex: 1;
-  /* Ocupă 1 unitate de spațiu */
-}
-
 .logo-container img {
-  max-width: 350px;
-  box-shadow: none;
-  border-radius: 0;
-  /* ADAUGĂ ACESTEA: */
-  mix-blend-mode: screen;
-  /* Ascunde pixelii negri */
-  filter: brightness(1.1) contrast(1.1);
-  /* Ajustează dacă e necesar */
+  max-width: 400px;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 30px rgba(251, 140, 45, 0.2)) drop-shadow(0 0 60px rgba(199, 26, 92, 0.1));
 }
 
-/* --- AICI ADAUGĂM FUNDALUL SPECIAL PENTRU PRIMA SECȚIUNE --- */
-.section-with-background {
-  /* Creăm un filtru de culoare PESTE imaginea de fundal */
-  background-image:
-    /* Strat 1: Filtrul de culoare semi-transparent */
-    linear-gradient(rgba(26, 26, 26, 0.80), rgba(26, 26, 26, 0.92)),
-    /* Strat 2: Imaginea ta */
-    url('./assets/bkgs.jpg');
-  /* <-- ÎNLOCUIEȘTE CU CALEA CORECTĂ */
+.logo-container img:hover {
+  transform: scale(1.02);
+}
 
+.section-with-background {
+  background-image: linear-gradient(rgba(26, 26, 26, 0.80), rgba(26, 26, 26, 0.92)), url('./assets/bkgs.jpg');
   background-size: cover;
   background-position: center;
-
   background-blend-mode: overlay;
-  /* Crește contrastul imaginii! */
   padding: 50px;
-  /* Spațiu interior generos */
   border-radius: 15px;
-  /* Colțuri rotunjite */
   margin-bottom: 60px;
-  /* Spațiu până la info-box */
 }
-
-/* Ajustare importantă pentru telefoane */
-@media (max-width: 900px) {
-  .text-align-right {
-    text-align: left;
-    /* Pe mobil, tot textul e aliniat la stânga */
-  }
-}
-
-/* Asta face titlurile verzi, ca să se potrivească cu tema */
 
 #About h1 {
-  /* Începe cu movul tău (#A020F0) și termină cu rozul din logo (#C71A5C) */
-  background: linear-gradient(to right, #A020F0, #C71A5C);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
   font-size: 3rem;
   text-align: center;
   margin-left: 0;
   width: 100%;
 }
 
-
 #About h2 {
-  background: linear-gradient(to right, #A020F0, #C71A5C);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-  filter: drop-shadow(0 0 5px rgba(160, 32, 240, 0.2));
-
   text-align: center;
-  /* <--- ADAUGĂ ACEASTĂ LINIE */
 }
 
-.sectiune-doua-coloane {
-  display: flex;
-  /* Asta le pune una lângă alta */
-  align-items: center;
-  /* Le aliniază frumos pe verticală */
-  gap: 40px;
-  /* Spațiu între ele */
-  margin-top: 60px;
-  /* Spațiu față de secțiunea BEST de deasupra */
-}
-
-/* Stil pentru coloana din stânga (imaginea) */
-.coloana-imagine {
-  flex: 1;
-  /* Ocupă jumătate din spațiu */
-}
-
-.coloana-imagine img {
-  width: 100%;
-  /* Imaginea umple coloana */
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* Stil pentru coloana din dreapta (textul) */
-.coloana-text {
-  flex: 1;
-  /* Ocupă cealaltă jumătate */
-  text-align: right;
-}
-
-.coloana-text-stanga {
-  flex: 1;
-  /* Ocupă jumătate din spațiu */
-  text-align: left;
-  /* Aliniază textul la stânga */
-}
-
-/* Stil pentru noul buton, copiat din imaginea ta */
-.buton-best {
-  display: inline-block;
-  width: fit-content;
-  margin-top: 25px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-
-  /* 1. FUNDALUL: Alb lăptos curat */
-  background-color: #fdf2f8;
-
-  /* 2. TEXTUL: Culoarea exactă Magenta/Roz din logo-ul tău */
-  color: #C71A5C !important;
-
-  /* 3. DIMENSIUNI: Mai echilibrate */
-  padding: 12px 30px;
-
-  /* 4. BORDURA: O linie foarte fină de culoarea textului care îl face "sharp" */
-  border: 1px solid rgba(199, 26, 92, 0.2);
-
-  /* 5. UMBRA: Ștergem halo-ul mov și punem o umbră naturală, sub buton */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.buton-best:hover {
-  transform: translateY(-2px);
-  /* Se ridică ușor la hover */
-  background-color: #ffffff;
-
-  /* La hover, umbra devine puțin mai vizibilă, dar rămâne sub buton */
-  box-shadow: 0 6px 20px rgba(199, 26, 92, 0.2);
-  border-color: rgba(199, 26, 92, 0.5);
-}
-
-/* Stil pentru box-ul cu info modernizat */
-.info-box {
-  background: rgba(20, 20, 20, 0.6);
-  /* Semi-transparent */
-  backdrop-filter: blur(8px);
-  /* Efect de sticlă */
-  border: 1px solid #9f1676;
-
-  /* Un mic efect de neon */
-
-  /* Bordură verde discretă */
-  border-radius: 15px;
-  /* Colțuri mai rotunjite */
-  padding: 25px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 50px;
-  /* Mai mult spațiu deasupra */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  /* Umbră să pară că plutește */
-}
-
-/* Micșorează logo-ul puțin */
-.logo-container img {
-  max-width: 400px;
-  /* Adăugăm o strălucire de culoarea piersicii/roz care să lege fundalul de logo */
-  filter: drop-shadow(0 0 30px rgba(251, 140, 45, 0.2)) drop-shadow(0 0 60px rgba(199, 26, 92, 0.1));
-  transition: transform 0.3s ease;
-}
-
-.logo-container img:hover {
-  transform: scale(1.02);
-  /* Un mic efect de puls la hover */
-}
-
-/* Asigură-te că secțiunea are destul spațiu jos */
-.about-hero-section {
-  padding-bottom: 80px;
-}
-
-
-/* Stilul pentru fiecare element (dată, locație) */
-.info-item {
-  display: flex;
-  /* Pune iconița lângă text */
-  align-items: center;
-  /* Le aliniază frumos */
-  gap: 10px;
-  /* Spațiu mic între iconiță și text */
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #f0f0f0;
-
-}
-
-/* Stilul pentru iconițe */
-.info-item svg {
-  /* Deoarece SVG-urile nu acceptă gradient ușor, punem Rozul din logo 
-     pentru a face contrast cu textul alb */
-  fill: #9f1676 !important;
-  filter: drop-shadow(0 0 5px rgba(199, 26, 92, 0.4));
-  /* Un mic efect de neon */
-}
-
-
-#Prizes {
+#Prizes,
+#Organizers {
   background-color: #1a1a1a;
-  /* Același fundal ca la About */
   padding: 50px 20px;
   text-align: center;
 }
 
-#Prizes h1 {
-  background: linear-gradient(to right, #A020F0, #C71A5C);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-  /* Dacă vrei să fie și mai "tech", poți adăuga un mic glow */
-  filter: drop-shadow(0 0 5px rgba(160, 32, 240, 0.2));
-  /* Același verde pentru titlu */
+#Prizes h1,
+#Organizers h1 {
   font-size: 2.5rem;
   margin-bottom: 50px;
 }
 
-/* Containerul care ține cele 3 boxe */
-.prizes-grid {
-  display: flex;
-  /* Le pune unul lângă altul */
-  gap: 30px;
-  /* Spațiu între boxe */
-}
-
-/* Stilul pentru fiecare box de premiu */
-.prize-box {
-  flex: 1;
-  /* Asta le face egale și le face să umple spațiul! */
-  background-color: #2a2a2a;
-  /* Același gri ca la info-box */
-  padding: 30px;
-  border-radius: 10px;
-  /* Un truc pentru un efect profi: o margine de sus care apare la hover */
-  border-top: 3px solid transparent;
-  transition: transform 0.3s ease, border-top-color 0.3s ease;
-}
-
-/* Efectul de hover */
-.prize-box:hover {
-  transform: translateY(-10px);
-  /* Ridică box-ul puțin */
-  background: linear-gradient(to right, #A020F0, #C71A5C);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-  /* Dacă vrei să fie și mai "tech", poți adăuga un mic glow */
-  filter: drop-shadow(0 0 5px rgba(160, 32, 240, 0.2));
-  /* Marginea de sus devine verde */
-}
-
-/* Stilul pentru SUMA premiului */
 .prize-amount {
   font-size: 5rem;
-  /* Foarte mare, să iasă în evidență */
-  background: linear-gradient(to right, #A020F0, #C71A5C);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-  /* Dacă vrei să fie și mai "tech", poți adăuga un mic glow */
-  filter: drop-shadow(0 0 5px rgba(160, 32, 240, 0.2));
-  /* Verde */
   font-weight: bold;
-  /* Font de tip "terminal" pentru un aspect tech autentic */
   font-family: 'Courier New', Courier, monospace;
 }
 
-/* Stilul pentru titlul premiului (Locul I, etc.) */
 .prize-title {
   font-size: 1.5rem;
   color: #ffffff;
   margin-top: 10px;
 }
 
-/* Stilul pentru descrierea bonusului */
 .prize-bonus {
   font-size: 1rem;
   color: #bbbbbb;
   margin-top: 25px;
 }
-
-#Organizers {
-  background-color: #1a1a1a;
-  /* Același fundal ca la About/Prizes */
-  padding: 50px 20px;
-  text-align: center;
-}
-
-#Organizers h1 {
-  background: linear-gradient(to right, #A020F0, #C71A5C);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-  /* Dacă vrei să fie și mai "tech", poți adăuga un mic glow */
-  filter: drop-shadow(0 0 5px rgba(160, 32, 240, 0.2));
-  /* Același verde pentru titlu */
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-}
-
-/* Containerul pentru fiecare rând de organizatori */
-.organizer-row {
-  display: flex;
-  /* Le pune unul lângă altul */
-  justify-content: center;
-  /* Le centrează pe orizontală */
-  gap: 15px !important;
-  /* Spațiu între persoane */
-  margin-bottom: 40px;
-  /* Spațiu între rânduri */
-  flex-wrap: wrap;
-  /* Permite trecerea pe rândul următor pe ecrane mici */
-}
-
-/* Cardul individual pentru fiecare organizator */
-.organizer-card {
-  /* Stabilim o lățime fixă pentru aliniere perfectă */
-  width: 285px;
-  text-align: center;
-}
-
-/* Stilul pentru poză */
-.organizer-card img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  /* Asigură că poza nu se deformează */
-  border-radius: 5px;
-  /* Colțuri ușor rotunjite */
-  margin-bottom: 15px;
-}
-
-/* Stilul pentru numele persoanei */
-.organizer-card h3 {
-  font-family: 'Courier New', Courier, monospace;
-  /* Fontul "tech" */
-  color: #ffffff;
-  font-size: 1.5rem;
-  margin: 0;
-}
-
-/* Stilul pentru rol și telefon */
-.organizer-card p {
-  font-family: 'Courier New', Courier, monospace;
-  /* Fontul "tech" */
-  color: #bbbbbb;
-  /* Un gri mai deschis */
-  font-size: 0.82rem !important;
-  white-space: nowerap;
-  overflow: visible;
-  letter-spacing: -0.2px;
-  line-height: 1.4;
-  margin: 5px 0 0 0;
-}
-
-/* Pentru telefon: le pune unul sub altul */
-@media (max-width: 900px) {
-  .prizes-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .prize-box {
-    width: 100%;
-    max-width: 400px;
-    /* O lățime maximă pe mobil */
-    padding: 0%;
-  }
-}
-
 
 #Sponsors {
   color: white;
@@ -627,50 +452,67 @@ body::-webkit-scrollbar {
 }
 
 #Sponsors h1 {
-  background: linear-gradient(to right, #A020F0, #C71A5C);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-  /* Dacă vrei să fie și mai "tech", poți adăuga un mic glow */
-  filter: drop-shadow(0 0 5px rgba(160, 32, 240, 0.2));
   font-size: 3rem;
   font-weight: 300;
   margin-bottom: 10px;
   margin-top: 50px;
 }
 
-.scroller {
-  max-width: 100%;
-  margin: 1rem auto;
-}
-
-.scroller__inner {
+#Footer {
+  background-color: #1a1a1a;
+  padding: 30px 50px;
+  border-top: none !important;
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding-block: 1rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Animate if data-animated is true */
-.scroller[data-animated="true"] {
-  overflow: hidden;
-  -webkit-mask: linear-gradient(90deg,
-      transparent,
-      white 20%,
-      white 80%,
-      transparent);
-  mask: linear-gradient(90deg,
-      transparent,
-      white 20%,
-      white 80%,
-      transparent);
+.footer-copyright p {
+  margin: 0;
+  color: #bbbbbb;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.scroller[data-animated="true"] .scroller__inner {
-  width: max-content;
-  flex-wrap: nowrap;
-  animation: scroll var(--_animation-duration, 120s) var(--_animation-direction, forwards) linear infinite;
+.footer-copyright a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-copyright a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons a svg {
+  fill: #ffffff;
+  transition: all 0.3s ease;
+  width: 26px;
+  height: 26px;
+  opacity: 0.7;
+}
+
+.social-icons a:hover svg {
+  opacity: 1;
+  fill: #C71A5C;
+  filter: drop-shadow(0 0 8px rgba(199, 26, 92, 0.6));
+  transform: translateY(-3px);
+}
+
+
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes scroll {
@@ -679,155 +521,6 @@ body::-webkit-scrollbar {
   }
 }
 
-.sponsor {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sponsor img {
-  height: 120px;
-  width: auto;
-  flex-shrink: 0;
-  object-fit: contain;
-  filter: grayscale(100%);
-  transition: filter 0.25s, transform 0.25s;
-}
-
-.sponsor img:hover {
-  filter: none;
-  transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-
-  /* Micșorăm codul de eroare 404 */
-  .error-code {
-    font-size: 6rem;
-  }
-
-  /* Micșorăm textul de sub 404 */
-  .subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-  }
-
-  /* Micșorăm fontul general pentru titluri */
-  h1 {
-    font-size: 2rem;
-  }
-
-  /* Micșorăm sumele premiilor */
-  .prize-amount {
-    font-size: 3.5rem;
-  }
-
-  /* Micșorăm titlurile premiilor */
-  .prize-title {
-    font-size: 1.2rem;
-  }
-
-  /* Ajustăm caseta de informații din About */
-  .info-box {
-
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
-  }
-
-  /* Punem coloanele din About una sub alta */
-  .sectiune-doua-coloane {
-    flex-direction: column;
-  }
-}
-
-#Footer {
-  background-color: #1a1a1a;
-  /* Același fundal ca la celelalte secțiuni */
-  padding: 30px 50px;
-  /* Spațiu interior generos */
-  border-top: none !important;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Stilul pentru textul de copyright */
-.footer-copyright p {
-  margin: 0;
-  /* Eliminăm marginea default a paragrafului */
-  color: #bbbbbb;
-  /* Un gri deschis */
-  font-family: 'Courier New', Courier, monospace;
-  /* Același font tech */
-}
-
-/* Stilul pentru link-ul "BEST Brașov" */
-.footer-copyright a {
-  background: linear-gradient(to right, #A020F0, #C71A5C);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-  /* Dacă vrei să fie și mai "tech", poți adăuga un mic glow */
-  filter: drop-shadow(0 0 5px rgba(160, 32, 240, 0.2));
-  /* Verdele specific temei */
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.footer-copyright a:hover {
-  text-decoration: underline;
-  /* Efect simplu la hover */
-}
-
-
-/* Containerul pentru iconițele sociale */
-.social-icons {
-  display: flex;
-  /* Le pune una lângă alta */
-  gap: 20px;
-  /* Spațiu între iconițe */
-}
-
-/* Stilul pentru fiecare iconiță */
-.social-icons a svg {
-  fill: #ffffff;
-  /* Albe curat */
-  transition: all 0.3s ease;
-  width: 26px;
-  height: 26px;
-  opacity: 0.7;
-  /* Puțin transparente să nu sară în ochi prea tare */
-}
-
-.social-icons a:hover svg {
-  opacity: 1;
-  /* La hover devin Rozul vibrant din logo-ul tău */
-  fill: #C71A5C;
-  filter: drop-shadow(0 0 8px rgba(199, 26, 92, 0.6));
-  /* Efect de neon */
-  transform: translateY(-3px);
-  /* Se ridică puțin */
-}
-
-
-/* În App.css, creează o regulă pentru toate titlurile de secțiune */
-
-.scroll-down-arrow {
-  position: absolute;
-  bottom: 40px;
-  /* Poți ajusta distanța față de jos */
-  left: 50%;
-  z-index: 2;
-  /* Se asigură că stă deasupra canvas-ului */
-  cursor: pointer;
-  /* Aplicăm animația definită mai jos */
-  animation: bounce 2s infinite;
-}
-
-/* Animația pentru săgeată care o face să "sară" */
 @keyframes bounce {
 
   0%,
@@ -840,15 +533,61 @@ body::-webkit-scrollbar {
 
   40% {
     transform: translate(-50%, -20px);
-    /* Cât de sus să sară */
   }
 
   60% {
     transform: translate(-50%, -10px);
   }
+}
 
 
 
+@media (max-width: 900px) {
+  .text-align-right {
+    text-align: left;
+  }
 
+  .prizes-grid {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .prize-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 0%;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .error-code {
+    font-size: 6rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+  }
+
+  .prize-amount {
+    font-size: 3.5rem;
+  }
+
+  .prize-title {
+    font-size: 1.2rem;
+  }
+
+  .info-box {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .sectiune-doua-coloane {
+    flex-direction: column;
+  }
 }

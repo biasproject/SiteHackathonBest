@@ -8,7 +8,6 @@ export default function AboutSection() {
   return (
     <section id="About">
 
-      {/* --- SECȚIUNEA 1: HERO CU FUNDAL FULL-WIDTH ȘI INFO-BOX INCLUS --- */}
       <div className="about-hero-section">
         <div className="content-wrapper">
           <div className="sectiune-doua-coloane">
@@ -26,8 +25,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* AICI AM MUTAT INFO-BOX-UL */}
-          <div className="info-box-container"> {/* Container adăugat pentru centrare */}
+          <div className="info-box-container">
             <div className="info-box">
               <div className="info-item">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#A020F0">
@@ -50,7 +48,6 @@ export default function AboutSection() {
         </div>
       </div>
 
-      {/* --- SECȚIUNEA 2: CONȚINUTUL RESTANT (DESPRE BEST) --- */}
       <div className="content-wrapper" style={{ paddingTop: '60px' }}>
         <div className="sectiune-doua-coloane">
           <div className="coloana-imagine">
