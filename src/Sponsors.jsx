@@ -4,8 +4,9 @@ import "./App.css"; // main CSS
 // Sponsor images
 import sponsor1 from "./assets/Logo_Tremend_Gri.png";
 import sponsor2 from "./assets/logo_cbc-01.png";
+import sponsor5 from "./assets/sponsor5.png";
 
-const sponsors = [sponsor1, sponsor2];
+const sponsors = [sponsor1, sponsor2, sponsor5];
 
 export default function Sponsors() {
   const sponsorScrollerRef = useRef(null);
