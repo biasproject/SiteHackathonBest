@@ -10,6 +10,7 @@ export default function WelcomeSection() {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
+    let animationFrameId;
 
     const letters = "01".repeat(6).split("");
 
@@ -34,16 +35,15 @@ export default function WelcomeSection() {
       ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-
       const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
       gradient.addColorStop(0, "#A020F0");
       gradient.addColorStop(0.4, "#C71A5C");
       gradient.addColorStop(1, "#C71A5C");
+
       dropsRef.current.forEach((drop, i) => {
         const text = letters[Math.floor(Math.random() * letters.length)];
 
         ctx.fillStyle = gradient;
-
         ctx.shadowBlur = 5;
         ctx.shadowColor = "#A020F0";
 
@@ -51,14 +51,14 @@ export default function WelcomeSection() {
 
         ctx.shadowBlur = 0;
 
-        dropsRef.current[i] += 0.40;
+        dropsRef.current[i] += 0.6;
 
         if (dropsRef.current[i] * fontSize > canvas.height && Math.random() > 0.995) {
           dropsRef.current[i] = 0;
         }
       });
 
-      requestAnimationFrame(draw);
+      animationFrameId = requestAnimationFrame(draw);
     };
 
     draw();
@@ -73,7 +73,11 @@ export default function WelcomeSection() {
     };
 
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(animationFrameId);
+    };
   }, []);
 
   return (
